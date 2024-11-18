@@ -4,46 +4,210 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animation Calendrier de l'Avent</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Global Reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Body & HTML */
+      html,
+      body {
+        height: 100%;
+        font-family: "Quicksand", sans-serif;
+        color: #333;
+        font-size: 1rem; /* 16px base font size */
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.6;
+      }
+
+      /* Background Image */
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/christmas-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.5;
+        z-index: -1;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffffff;
+        padding: 1.5rem;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      header img {
+        width: 150px;
+        height: auto;
+      }
+
+      .title {
+        font-family: "Great Vibes", cursive;
+        font-size: 2rem; /* Adjusted to be accessible */
+        color: #af0909;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      /* Main Section */
+      section {
+        margin: 2rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      h2 {
+        font-family: "Raleway", sans-serif;
+        font-size: 1.25rem; /* Reduced slightly for better hierarchy */
+        color: #1d3557;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      .video-container {
+        background-color: #b3be95;
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 885px;
+        width: 100%;
+        transition: transform 0.3s;
+      }
+
+      .video-container:hover {
+        transform: scale(1.02);
+      }
+
+      .vts-video {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        aspect-ratio: 16 / 9;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: #457b9d;
+        padding: 1rem;
+        color: #f1faee;
+        margin-top: auto;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .title {
+          font-size: 1.75rem; /* Accessible size for medium screens */
+        }
+
+        h2 {
+          font-size: 1.125rem; /* Keep accessibility on smaller devices */
+        }
+
+        header {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+
+        header img {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title {
+          font-size: 1.5rem; /* Accessible size for small screens */
+        }
+
+        .video-container {
+          padding: 1rem;
+        }
+
+        h2 {
+          font-size: 1rem; /* Ensure readable text size on small screens */
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <!-- Bandeau de Noël avec logo -->
-    <header class="banner">
-      <h1>Animation Calendrier de l'Avent</h1>
-      <img src="logo.png" alt="Logo" class="logo" />
+    <div class="background" aria-hidden="true"></div>
+    <header>
+      <img src="logo-afterall.png" alt="Logo de After-All" />
+      <h1 class="title">Animation Calendrier de l'Avent</h1>
     </header>
 
-    <!-- Contenu principal -->
-    <section class="content">
-      <!-- Lundi 02 décembre -->
-      <div class="video-row">
-        <h2>Lundi 02 décembre</h2>
-        <iframe
-          src="./vts-editor/Module/index.html"
-          frameborder="0"
-          class="vts-video"
-        ></iframe>
-      </div>
+    <main>
+      <section aria-label="Vidéos du calendrier de l'Avent">
+        <div class="video-container">
+          <h2>Lundi 02 décembre</h2>
+          <iframe
+            src="./vts-editor/Module/index.html"
+            frameborder="0"
+            class="vts-video"
+            title="Vidéo du 2 décembre"
+            allowfullscreen
+          ></iframe>
+        </div>
 
-      <!-- Lundi 09 décembre -->
-      <div class="video-row">
-        <h2>Lundi 09 décembre</h2>
-        <iframe
-          src="video2-vts.html"
-          frameborder="0"
-          class="vts-video"
-        ></iframe>
-      </div>
+        <div class="video-container">
+          <h2>Lundi 09 décembre</h2>
+          <iframe
+            src="./vts-editor/Module/index.html"
+            frameborder="0"
+            class="vts-video"
+            title="Vidéo du 9 décembre"
+            allowfullscreen
+          ></iframe>
+        </div>
 
-      <!-- Lundi 16 décembre -->
-      <div class="video-row">
-        <h2>Lundi 16 décembre</h2>
-        <iframe
-          src="video3-vts.html"
-          frameborder="0"
-          class="vts-video"
-        ></iframe>
-      </div>
-    </section>
+        <div class="video-container">
+          <h2>Lundi 16 décembre</h2>
+          <iframe
+            src="./vts-editor/Module/index.html"
+            frameborder="0"
+            class="vts-video"
+            title="Vidéo du 16 décembre"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Créez la magie de Noël avec nos animations chaque semaine ! ✨</p>
+      <p>Page créée par After-All - déc 2024</p>
+    </footer>
   </body>
 </html>
