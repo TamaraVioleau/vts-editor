@@ -153,17 +153,22 @@
         }
       }
 
-      /* Mode paysage */
-      @media (orientation: landscape) {
+      /* Mode paysage (mobile) */
+      @media (orientation: landscape) and (max-width: 768px) {
+        section {
+          display: flex;
+          flex-direction: column; /* Empile les vidéos en colonne */
+          align-items: center; /* Centre les vidéos */
+        }
+
         .video-container {
-          max-height: 100vh; /* Limite la hauteur au maximum disponible */
-          width: auto; /* Ajuste la largeur en fonction du ratio */
-          padding: 0; /* Supprime le padding pour maximiser l'espace */
+          max-width: 90%; /* Largeur ajustée pour éviter tout débordement */
+          margin: 0 auto; /* Centre chaque vignette */
         }
 
         .vts-video {
-          height: 100%; /* Utilise toute la hauteur */
-          width: auto; /* Garde un ratio correct */
+          height: auto;
+          width: 100%; /* Vidéo adapte sa taille */
         }
       }
     </style>
