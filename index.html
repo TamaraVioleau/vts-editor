@@ -15,6 +15,19 @@
       rel="stylesheet"
     />
     <style>
+      :root {
+        --base-spacing: 1rem;
+        --header-height: 80px;
+        --video-max-width: 600px;
+        --font-primary: "Quicksand", sans-serif;
+        --font-secondary: "Raleway", sans-serif;
+        --color-primary: #af0909;
+        --color-secondary: #1d3557;
+        --color-bg: #f1faee;
+        --color-footer: #457b9d;
+        --color-video-bg: #b3be95;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -24,7 +37,7 @@
       html,
       body {
         height: 100%;
-        font-family: "Quicksand", sans-serif;
+        font-family: var(--font-primary);
         color: #333;
         font-size: 1rem;
         margin: 0;
@@ -49,6 +62,7 @@
         background-repeat: no-repeat;
         opacity: 0.5;
         z-index: -1;
+        aria-hidden: true;
       }
 
       header {
@@ -56,7 +70,7 @@
         align-items: center;
         justify-content: space-between;
         background-color: #ffffff;
-        padding: 1.5rem;
+        padding: var(--base-spacing);
         width: 100%;
       }
 
@@ -68,35 +82,38 @@
       .title {
         font-family: "Great Vibes", cursive;
         font-size: 2rem;
-        color: #af0909;
+        color: var(--color-primary);
         text-align: center;
         margin: 0 auto;
       }
 
+      main {
+        margin-block: var(--base-spacing);
+      }
+
       section {
-        margin: 2rem auto;
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: var(--base-spacing);
         justify-content: center;
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 var(--base-spacing);
       }
 
       h2 {
-        font-family: "Raleway", sans-serif;
+        font-family: var(--font-secondary);
         font-size: 1.25rem;
-        color: #1d3557;
+        color: var(--color-secondary);
         margin-bottom: 0.5rem;
         text-align: center;
       }
 
       .video-container {
-        background-color: #b3be95;
-        padding: 1.5rem;
+        background-color: var(--color-video-bg);
+        padding: var(--base-spacing);
         border-radius: 16px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 885px;
+        max-width: var(--video-max-width);
         width: 100%;
         transition: transform 0.3s;
       }
@@ -112,13 +129,18 @@
         border: none;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         aspect-ratio: 16 / 9;
+        outline: none;
+      }
+
+      .vts-video:focus {
+        outline: 3px solid var(--color-footer);
       }
 
       footer {
         text-align: center;
-        background-color: #457b9d;
-        padding: 1rem;
-        color: #f1faee;
+        background-color: var(--color-footer);
+        padding: var(--base-spacing);
+        color: var(--color-bg);
         margin-top: auto;
       }
 
@@ -130,7 +152,7 @@
         header {
           flex-direction: column;
           text-align: center;
-          gap: 1rem;
+          gap: var(--base-spacing);
         }
 
         header img {
@@ -138,7 +160,7 @@
         }
 
         .video-container {
-          padding: 1rem;
+          padding: 0.5rem;
         }
 
         h2 {
@@ -154,10 +176,10 @@
         }
 
         .video-container {
-          max-width: 600px; /* Appliqué uniquement en paysage sur mobile */
+          max-width: var(--video-max-width);
           width: 100%;
-          height: calc(100vh - 80px);
-          padding: 1rem;
+          height: calc(100vh - var(--header-height));
+          padding: var(--base-spacing);
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -173,9 +195,12 @@
   </head>
 
   <body>
-    <div class="background" aria-hidden="true"></div>
+    <div class="background"></div>
     <header>
-      <img src="logo-afterall.png" alt="Logo de After-All" />
+      <img
+        src="logo-afterall.png"
+        alt="Logo de After-All, représentant une étoile et des ornements de Noël"
+      />
       <h1 class="title">Animation Calendrier de l'Avent</h1>
     </header>
 
@@ -185,33 +210,42 @@
           <h2>Lundi 02 décembre</h2>
           <iframe
             src="./vts-editor/Module/index.html"
-            frameborder="0"
-            class="vts-video"
             title="Vidéo du 2 décembre"
             allowfullscreen
-          ></iframe>
+            loading="lazy"
+            class="vts-video"
+          >
+            Votre navigateur ne prend pas en charge les vidéos intégrées.
+            Veuillez utiliser un navigateur moderne.
+          </iframe>
         </div>
 
         <div class="video-container">
           <h2>Lundi 09 décembre</h2>
           <iframe
             src="./vts-editor/Module/index.html"
-            frameborder="0"
-            class="vts-video"
             title="Vidéo du 9 décembre"
             allowfullscreen
-          ></iframe>
+            loading="lazy"
+            class="vts-video"
+          >
+            Votre navigateur ne prend pas en charge les vidéos intégrées.
+            Veuillez utiliser un navigateur moderne.
+          </iframe>
         </div>
 
         <div class="video-container">
           <h2>Lundi 16 décembre</h2>
           <iframe
             src="./vts-editor/Module/index.html"
-            frameborder="0"
-            class="vts-video"
             title="Vidéo du 16 décembre"
             allowfullscreen
-          ></iframe>
+            loading="lazy"
+            class="vts-video"
+          >
+            Votre navigateur ne prend pas en charge les vidéos intégrées.
+            Veuillez utiliser un navigateur moderne.
+          </iframe>
         </div>
       </section>
     </main>
