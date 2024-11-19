@@ -157,26 +157,25 @@
       @media (orientation: landscape) and (max-width: 768px) {
         section {
           display: flex;
-          flex-direction: column; /* Empile les vidéos en colonne */
-          align-items: center; /* Centre les vidéos */
-          height: 100vh; /* La section prend toute la hauteur de l'écran */
-          justify-content: center; /* Centre verticalement */
+          flex-direction: column; /* Force l'affichage en colonne */
+          align-items: center; /* Centre les vidéos horizontalement */
+          justify-content: flex-start; /* Aligne les vidéos verticalement */
+          height: 100vh; /* La section prend toute la hauteur */
         }
 
         .video-container {
-          max-width: 100%; /* La largeur de la vidéo s'adapte */
-          max-height: 100vh; /* La hauteur de la vidéo ne dépasse pas celle de l'écran */
-          width: auto; /* Respecte le ratio */
-          height: 100vh; /* Utilise toute la hauteur de l'écran */
-          padding: 0; /* Supprime les marges internes */
-          display: flex;
+          width: 100%; /* S'étend sur toute la largeur disponible */
+          height: 100vh; /* Prend toute la hauteur de l'écran */
+          max-height: 100vh; /* Limite la hauteur */
+          padding: 0; /* Retire les marges pour maximiser l'espace */
+          display: flex; /* Centre la vidéo à l'intérieur */
           justify-content: center;
           align-items: center;
         }
 
         .vts-video {
-          height: 100%; /* La vidéo occupe toute la hauteur du conteneur */
-          width: auto; /* Ajuste la largeur pour respecter le ratio 16:9 */
+          height: 100%; /* La vidéo occupe toute la hauteur */
+          width: auto; /* Garde le ratio 16:9 */
         }
 
         h2 {
