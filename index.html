@@ -153,18 +153,16 @@
           flex-direction: column;
           align-items: center;
           justify-content: flex-start;
-          height: calc(
-            100vh - 80px
-          ); /* La hauteur de l'écran moins celle du header */
+          height: calc(100vh - 80px);
         }
 
         .video-container {
+          max-width: 600px; /* Appliqué uniquement en paysage sur mobile */
           width: 100%;
           height: calc(100vh - 80px);
-          max-height: calc(100vh - 80px);
           padding: 0;
           display: flex;
-          flex-direction: column; /* Permet d'afficher le titre au-dessus de la vidéo */
+          flex-direction: column;
           justify-content: flex-start;
           align-items: center;
         }
