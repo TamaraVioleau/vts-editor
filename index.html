@@ -162,13 +162,24 @@
         }
 
         .video-container {
-          max-width: 90%; /* Largeur ajustée pour éviter tout débordement */
+          max-width: 90%; /* Largeur ajustée */
+          max-height: 100vh; /* Ne dépasse pas la hauteur de l'écran */
           margin: 0 auto; /* Centre chaque vignette */
+          padding: 0; /* Supprime les marges internes */
+          overflow: hidden; /* Empêche les débordements */
         }
 
         .vts-video {
-          height: auto;
-          width: 100%; /* Vidéo adapte sa taille */
+          height: 100%; /* Prend toute la hauteur du conteneur */
+          width: auto; /* Respecte le ratio 16:9 */
+          max-height: calc(
+            100vh - 2rem
+          ); /* Ajuste pour laisser un peu d'espace */
+        }
+
+        h2 {
+          font-size: 1rem; /* Adapte la taille des titres */
+          margin-bottom: 0.5rem;
         }
       }
     </style>
