@@ -141,7 +141,7 @@
         }
 
         header img {
-          width: 100px; /* Réduit la taille du logo sur mobile */
+          width: 100px;
         }
 
         .video-container {
@@ -150,6 +150,20 @@
 
         h2 {
           font-size: 1rem;
+        }
+      }
+
+      /* Mode paysage */
+      @media (orientation: landscape) {
+        .video-container {
+          max-height: 100vh; /* Limite la hauteur au maximum disponible */
+          width: auto; /* Ajuste la largeur en fonction du ratio */
+          padding: 0; /* Supprime le padding pour maximiser l'espace */
+        }
+
+        .vts-video {
+          height: 100%; /* Utilise toute la hauteur */
+          width: auto; /* Garde un ratio correct */
         }
       }
     </style>
