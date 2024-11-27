@@ -177,9 +177,8 @@ footer {
 
 #festive-message > p {
   padding: var(--base-spacing);
-  font-size: 10vw;
+  font-size: 3rem;
   margin-inline: 1rem;
   color: var(--color-secondary);
   font-weight: bold;
-  text-shadow: 2px 2px 8px white;
 }
