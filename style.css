@@ -181,4 +181,6 @@ footer {
   margin-inline: 1rem;
   color: var(--color-secondary);
   font-weight: bold;
+  background: #f0f8ff8f;
+  border-radius: 1rem;
 }
