@@ -27,7 +27,17 @@
     </header>
 
     <main>
-      <section aria-label="Vidéos du calendrier de l'Avent">
+      <!-- Message Festif -->
+      <div id="festive-message">
+        <p>Ho, ho ho, revenez le 1er décembre ! 🎅</p>
+      </div>
+
+      <!-- Section cachée jusqu'au 1er décembre -->
+      <section
+        id="advent-calendar"
+        aria-label="Vidéos du calendrier de l'Avent"
+        style="display: none"
+      >
         <div class="video-container">
           <h2>Lundi 02 décembre</h2>
           <iframe
@@ -76,5 +86,18 @@
       <p>Créez la magie de Noël avec nos animations chaque semaine ! ✨</p>
       <p>Page créée par After-All - déc 2024</p>
     </footer>
+
+    <script>
+      // Fonction pour vérifier la date actuelle et afficher le calendrier si c'est après le 1er décembre
+      document.addEventListener("DOMContentLoaded", function () {
+        const today = new Date();
+        const adventStart = new Date(today.getFullYear(), 11, 1); // 1er décembre
+
+        if (today >= adventStart) {
+          document.getElementById("festive-message").style.display = "none";
+          document.getElementById("advent-calendar").style.display = "block";
+        }
+      });
+    </script>
   </body>
 </html>
