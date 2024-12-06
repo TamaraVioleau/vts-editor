@@ -27,17 +27,11 @@
     </header>
 
     <main>
-      <!-- Message Festif -->
-      <div id="festive-message">
-        <p>Ho, ho ho, revenez le 1er décembre ! 🎅</p>
-      </div>
-
-      <!-- Section cachée jusqu'au 1er décembre -->
       <section
         id="advent-calendar"
         aria-label="Vidéos du calendrier de l'Avent"
-        style="display: none"
       >
+        <!-- Vidéo toujours visible -->
         <div class="video-container">
           <h2>Lundi 02 décembre</h2>
           <iframe
@@ -52,7 +46,8 @@
           </iframe>
         </div>
 
-        <div class="video-container" style="display: none">
+        <!-- Vidéos qui s'affichent selon la date -->
+        <div class="video-container" data-date="2024-12-09">
           <h2>Lundi 09 décembre</h2>
           <iframe
             src="./vts-editor/Felicitations_d/Felicitations_d_Web/Module/index.html"
@@ -66,11 +61,25 @@
           </iframe>
         </div>
 
-        <div class="video-container" style="display: none">
+        <div class="video-container" data-date="2024-12-16">
           <h2>Lundi 16 décembre</h2>
           <iframe
             src="./vts-editor/Module/index.html"
             title="Vidéo du 16 décembre"
+            allowfullscreen
+            loading="lazy"
+            class="vts-video"
+          >
+            Votre navigateur ne prend pas en charge les vidéos intégrées.
+            Veuillez utiliser un navigateur moderne.
+          </iframe>
+        </div>
+
+        <div class="video-container" data-date="2024-12-24">
+          <h2>Mardi 24 décembre</h2>
+          <iframe
+            src="./vts-editor/Module/index.html"
+            title="Vidéo du 24 décembre"
             allowfullscreen
             loading="lazy"
             class="vts-video"
@@ -88,15 +97,23 @@
     </footer>
 
     <script>
-      // Fonction pour vérifier la date actuelle et afficher le calendrier si c'est après le 1er décembre
+      // Fonction pour afficher les vidéos en fonction de la date actuelle
       document.addEventListener("DOMContentLoaded", function () {
         const today = new Date();
-        const adventStart = new Date(today.getFullYear(), 11, 2); // 1er décembre
+        const videoContainers = document.querySelectorAll(".video-container[data-date]");
 
-        if (today >= adventStart) {
-          document.getElementById("festive-message").style.display = "none";
-          document.getElementById("advent-calendar").style.display = "block";
-        }
+        videoContainers.forEach(container => {
+          const targetDate = new Date(container.getAttribute("data-date"));
+          if (
+            today.getFullYear() === targetDate.getFullYear() &&
+            today.getMonth() === targetDate.getMonth() &&
+            today.getDate() === targetDate.getDate()
+          ) {
+            container.style.display = "block"; // Affiche la vidéo si la date correspond
+          } else {
+            container.style.display = "none"; // Cache la vidéo sinon
+          }
+        });
       });
     </script>
   </body>
